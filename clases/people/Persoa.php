@@ -5,7 +5,7 @@ namespace clases\people;
  *
  * @author maria
  */
-class Persoa {
+class Persoa  implements \JsonSerializable{
    protected $nome;
    protected $apelidos;
    protected $mobil;
@@ -48,5 +48,11 @@ class Persoa {
                    "(".$this->mobil.")<br/>"]);
        echo $cadea;
    }
+
+   public function jsonSerialize()   {
+
+    $nome_apelidos = join(" ", [$this->nome, $this->apelidos], );
+    return ["nome_apelidos" => $nome_apelidos, "mobil" => $this->mobil];
+}
 
 }

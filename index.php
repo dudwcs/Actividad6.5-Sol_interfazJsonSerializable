@@ -74,4 +74,4 @@ $profe1->mostrarBailes();
 
 
 
-
+echo json_encode($profe1);
